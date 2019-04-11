@@ -84,7 +84,10 @@ public class Main {
         FileChannel inputCh = new FileInputStream(fileName).getChannel();
         MappedByteBuffer buffer = inputCh.map(FileChannel.MapMode.READ_ONLY, 0, inputCh.size());
         buffer.load();
-        buffer.clear(); // do something with the data and clear/compact it.
+        for(int i = 0; i < buffer.limit();i++) {
+            destination[i]=(char)buffer.get();
+        }
+        buffer.clear();
         inputCh.close();
     }
 
