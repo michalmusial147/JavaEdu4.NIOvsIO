@@ -6,15 +6,11 @@ import  java.util.Arrays;
 import java.nio.file.Path;
 import java.nio.file.Files;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.CharBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CharsetEncoder;
-import java.nio.channels.WritableByteChannel;
+
+
 
 public class Main {
 
@@ -101,7 +97,7 @@ public class Main {
             char[] array = new char[N];
             long millisActualTime;
             generate(array, N);
-           
+
             millisActualTime = System.currentTimeMillis();
             writeIO(Filename, array);
             readIO(Filename, array);
